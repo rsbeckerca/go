@@ -87,6 +87,11 @@ func statUnix(fi os.FileInfo, h *Header) error {
 			minor := uint32((dev & 0x000000ff) >> 0)
 			minor |= uint32((dev & 0xfff00000) >> 12)
 			h.Devmajor, h.Devminor = int64(major), int64(minor)
+		case "nsx":
+			// Copied from golang.org/x/sys/unix/dev_darwin.go.
+			major := uint32((dev >> 24) & 0xff)
+			minor := uint32(dev & 0xffffff)
+			h.Devmajor, h.Devminor = int64(major), int64(minor)
 		case "openbsd":
 			// Copied from golang.org/x/sys/unix/dev_openbsd.go.
 			major := uint32((dev & 0x0000ff00) >> 8)

@@ -680,6 +680,8 @@ func multicastRIBContains(ip IP) (bool, error) {
 		if runtime.GOARCH == "arm" || runtime.GOARCH == "alpha" {
 			return true, nil // not implemented yet
 		}
+	case "nsx":
+		return true, nil // not implemented yet
 	}
 	ift, err := Interfaces()
 	if err != nil {

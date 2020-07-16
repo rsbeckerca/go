@@ -41,6 +41,7 @@ var osDefaultInheritEnv = map[string][]string{
 	"openbsd": {"LD_LIBRARY_PATH"},
 	"solaris": {"LD_LIBRARY_PATH", "LD_LIBRARY_PATH_32", "LD_LIBRARY_PATH_64"},
 	"windows": {"SystemRoot", "COMSPEC", "PATHEXT", "WINDIR"},
+	"nsx":   {"_RLD_LIB_PATH", "_RLD_LIB_FIRST"},
 }
 
 // Handler runs an executable in a subprocess with a CGI environment.

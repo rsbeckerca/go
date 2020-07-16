@@ -91,6 +91,7 @@ var okgoos = []string{
 	"plan9",
 	"windows",
 	"aix",
+	"nsx",
 }
 
 // find reports the first index of p in l[0:n], or else -1.
